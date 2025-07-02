@@ -1,0 +1,21 @@
+---
+import {type Book} from "./types";
+
+interface Props {
+    books: Book[]
+}
+const {books} = Astro.props
+---
+<ul>
+    {
+        books.map((book) => {
+            return(
+                    <li>
+                        <h2>{book.title}</h2>
+                        <i>{book.author.lastName}, {book.author.firstName}</i>
+                        <p>{book.note}</p>
+                    </li>
+            )
+        })
+    }
+</ul>
